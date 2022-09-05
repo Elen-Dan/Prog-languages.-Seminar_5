@@ -14,7 +14,7 @@ int Sum = 0;
 
 int [] Array = new int[1000];
 // Заполнение массива
-while(index < Stop)
+while(index <= Stop)
     {
         Array[index] = new Random().Next(Start, Stop);
         Console.Write(Array[index] + " ");
