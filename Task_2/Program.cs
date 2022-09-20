@@ -10,18 +10,20 @@
 Console.Clear();
 
 int Start = 0;
-int Stop = 999;
+int Stop = 10;
 int index = 0;
 int Sum = 0;
 
-int [] Array = new int[1000];
+int [] Array = new int[11];
 // Заполнение массива
-while(index <= Stop)
+while(index < Array.Length)
     {
         Array[index] = new Random().Next(Start, Stop);
         Console.Write(Array[index] + " ");
-        if (Array[index] % 2 == 0 & index % 2 !=0)
-            Sum = Sum + Array[index]; //Находим количество четных элементов в массиве
+        if (index % 2 !=0 & Array[index] % 2 == 0) //проверка условия задачи
+            {
+                Sum = Sum + Array[index];
+            } 
         index++;
     }
 Console.WriteLine("");
