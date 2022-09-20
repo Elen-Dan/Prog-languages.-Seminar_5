@@ -12,15 +12,15 @@ int Stop = 999;
 int index = 0;
 int Sum = 0;
 
-int [] Array = new int[1000];
+int [] Array = new int[901];
 // Заполнение массива
-while(index <= Stop)
+while(index < Array.Length)
     {
         Array[index] = new Random().Next(Start, Stop);
         Console.Write(Array[index] + " ");
         if (Array[index] % 2 == 0)
-            Sum = Sum + Array[index]; //Находим количество четных чисел в массиве
+            Sum = Sum + 1; //Находим количество четных чисел в массиве
         index++;
     }
 Console.WriteLine("");
-Console.WriteLine("Сумма четных чисел массива равна " + Sum);
+Console.WriteLine("Количество четных чисел в массиве: " + Sum);
