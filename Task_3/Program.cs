@@ -6,26 +6,33 @@
 Console.Clear();
 
 int Start = 1;
-int Stop = 999;
-int Min = 0;
-int Max = 0;
+int Stop = 10;
 int index = 0;
-int Difference = 0;
 
-int [] Array = new int[1000];
-// Заполнение массива
-while(index < Stop)
-    {
+int [] Array = new int[11];
+// 
+while(index < Array.Length)
+    {   
         Array[index] = new Random().Next(Start, Stop);
         Console.Write(Array[index] + " ");
-        if (Array[index] < Array[index+1])
-            Min = Array[index]; //Находим минимальное значение
-        else 
-            Max = Array[index];
         index++;
-        Difference = Max - Min;
     }
+
+int Min = Array[0];
+for (int i = 0; i < Array.Length; i++)    
+{
+    if (Array[i] < Min)
+        Min = Array[i];
+}
+
+int Max = Array[0];
+for (int j = 0; j < Array.Length; j++)
+{
+    if (Array[j] > Max)
+        Max = Array[j];
+}
+
 Console.WriteLine("");
-Console.WriteLine("Разница между максимальным и минимальным значением равна " + Difference);
+Console.WriteLine("Разница между максимальным и минимальным значением равна " + (Max - Min));
 Console.WriteLine("Min= " + Min);
 Console.WriteLine("Max= " + Max);
